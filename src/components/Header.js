@@ -12,7 +12,7 @@ const Header = (props) => {
   // const location = useLocation();
   const handleLogout = () => {
     localStorage.removeItem('token');
-    props.islogin = false;
+    props.setlogin(true);
     navigate('/login');
   };
 
@@ -23,9 +23,9 @@ const Header = (props) => {
           <Link to="/login" style={{color:"white"}}>MyCarApp</Link>
         </div>
         <div className="nav-links">
-          {props.islogin ? <Link to="/CarList" style={{color:"white"}}>Home</Link> : <Link to="/login" style={{color:"white"}}>Home</Link>}
+          {props.login ? <Link to="/CarList" style={{color:"white"}}>Home</Link> : <Link to="/login" style={{color:"white"}}>Home</Link>}
           <Link to="/add-car" style={{color:"white"}}>Add Car</Link>
-          {props.islogin ? (
+          {props.login ? (
             <>
               <Link to="/CarList" style={{color:"white"}}>My Cars</Link>
               <button className="logout-btn" onClick={handleLogout}>

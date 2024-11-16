@@ -10,16 +10,14 @@ import Header from './components/Header';
 import { useState } from 'react';
 
 function App() {
-  // const [login, isLogin] = useState(false);
+  const [login, setLogin] = useState(false);
   const data = localStorage.getItem('token');
-console.log(data);
-
   return (
     <Router>
       <Header />
       <Routes>
         {data ? <Route path="/" element={<CarList />} /> : <Route path="/" element={<Login />} />}
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login login = {login} setlogin = {setLogin}/>} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/CarList" element={<CarList />} />
         <Route path="/add-car" element={<CarForm />} />
