@@ -18,6 +18,7 @@ const Login = (props) => {
       localStorage.setItem('token', data.token);
       // console.log(form.username, 'IIIIIIII');
       props.islogin = true;
+      console.log(props.islogin);
       // <CarList username = {form.username}/>
       // console.log(data.token.password);
       navigate('/CarList', { state: { username: form?.username } });

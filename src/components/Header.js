@@ -7,7 +7,7 @@ const Header = (props) => {
   const navigate = useNavigate();
   const data = localStorage.getItem('token');
 
-  console.log(props.islogin);
+  
   
   // const location = useLocation();
   const handleLogout = () => {
