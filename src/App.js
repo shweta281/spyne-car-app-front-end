@@ -10,23 +10,22 @@ import Header from './components/Header';
 import { useState } from 'react';
 
 function App() {
-  const [login, setLogin] = useState(false);
+  // const [login, isLogin] = useState(false);
   const data = localStorage.getItem('token');
 console.log(data);
 
   return (
     <Router>
-      <Header islogin={setLogin}/>
+      <Header />
       <Routes>
-        <Route path="/" element={<CarList />} /> : <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login islogin={setLogin}/>} />
-        <Route path="/signup" element={<Signup islogin={setLogin}/>} />
-        <Route path="/CarList" element={<CarList islogin={setLogin}/>} />
-        <Route path="/add-car" element={<CarForm islogin={setLogin}/>} />
-        <Route path="/add-car" element={<CarForm islogin={setLogin}/>} />
-        <Route path="/car/:id" element={<CarDetail islogin={setLogin}/>} />
-        <Route path="/car/edit/:id" element={<CarForm islogin={setLogin}/>} />
-        <Route path="/cars/update/:id" element={<CarEdit islogin={setLogin}/>} />
+        {data ? <Route path="/" element={<CarList />} /> : <Route path="/" element={<Login />} />}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/CarList" element={<CarList />} />
+        <Route path="/add-car" element={<CarForm />} />
+        <Route path="/car/:id" element={<CarDetail />} />
+        <Route path="/car/edit/:id" element={<CarForm />} />
+        <Route path="/cars/update/:id" element={<CarEdit />} />
       </Routes>
     </Router>
   ); 
