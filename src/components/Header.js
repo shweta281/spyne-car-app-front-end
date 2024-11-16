@@ -20,22 +20,22 @@ const Header = (props) => {
     <nav className="header">
       <div className="header-container">
         <div className="logo">
-          <Link to="/login" style={{color: 'black'}}>MyCarApp</Link>
+          <Link to="/login" style={{color:"white"}}>MyCarApp</Link>
         </div>
         <div className="nav-links">
-          {props.islogin ? <Link to="/CarList">Home</Link> : <Link to="/login" style={{color: 'black'}}>Home</Link>}
-          <Link to="/add-car" style={!props.islogin ? { color: 'black'  } : {}}>Add Car</Link>
+          {props.islogin ? <Link to="/CarList" style={{color:"white"}}>Home</Link> : <Link to="/login" style={{color:"white"}}>Home</Link>}
+          <Link to="/add-car" style={{color:"white"}}>Add Car</Link>
           {props.islogin ? (
             <>
-              <Link to="/CarList">My Cars</Link>
+              <Link to="/CarList" style={{color:"white"}}>My Cars</Link>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout
               </button> 
             </>
           ) : (
             <>
-              <Link to="/login" style={!props.islogin ? { color: 'black'  } : {}}>Login</Link>
-              <Link to="/signup" style={!props.islogin ? { color: 'black'  } : {}}>Signup</Link>
+              <Link to="/login" style={{color:"white"}}>Login</Link>
+              <Link to="/signup" style={{color:"white"}}>Signup</Link>
             </>
           )}
         </div>
