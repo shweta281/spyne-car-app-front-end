@@ -17,7 +17,7 @@ const Login = (props) => {
       const { data } = await API.post('/users/login', form);
       localStorage.setItem('token', data.token);
       // console.log(form.username, 'IIIIIIII');
-      props.setlogin(true);
+      props.setlogintrue;
       console.log(props.login);
       // <CarList username = {form.username}/>
       // console.log(data.token.password);
