@@ -20,8 +20,7 @@ const Header = (props) => {
     <nav className="header">
       <div className="header-container">
         <div className="logo">
-          {props.islogin ? <Link to="/CarList">MyCarApp</Link> : <Link to="/login" style={{color: 'black'}}>MyCarApp</Link>}
-          
+          <Link to="/login" style={{color: 'black'}}>MyCarApp</Link>
         </div>
         <div className="nav-links">
           {props.islogin ? <Link to="/CarList">Home</Link> : <Link to="/login" style={{color: 'black'}}>Home</Link>}
