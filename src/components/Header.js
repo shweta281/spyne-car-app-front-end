@@ -26,7 +26,7 @@ const Header = (props) => {
         <div className="nav-links">
           {props.islogin ? <Link to="/CarList">Home</Link> : <Link to="/login" style={{color: 'black'}}>Home</Link>}
           {/* <Link to="/">Home</Link> */}
-          {props.islogin ? <Link to="/add-car">Add Car</Link> : <Link to="/login" style={{color: 'black'}}>Add Car</Link>}
+          <Link to="/add-car">Add Car</Link>
           {/* <Link to="/add-car">Add Car</Link> */}
           {props.islogin ? (
             <>
