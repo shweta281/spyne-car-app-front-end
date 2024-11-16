@@ -38,7 +38,13 @@ const Header = (props) => {
         <div className="nav-links">
           {props.login ? <Link to="/CarList" style={{color:"white"}}>Home</Link> : <Link to="/login" style={{color:"white"}}>Home</Link>}
           <Link to="/add-car" style={{color:"white"}}>Add Car</Link>
-          {data ? (
+          <Link to="/CarList" style={{color:"white"}}>My Cars</Link>
+              <button className="logout-btn" onClick={handleLogout}>
+                Logout
+              </button> 
+              <Link to="/login" style={{color:"white"}}>Login</Link>
+              <Link to="/signup" style={{color:"white"}}>Signup</Link>
+          {/* {data ? (
             <>
               <Link to="/CarList" style={{color:"white"}}>My Cars</Link>
               <button className="logout-btn" onClick={handleLogout}>
@@ -50,7 +56,7 @@ const Header = (props) => {
               <Link to="/login" style={{color:"white"}}>Login</Link>
               <Link to="/signup" style={{color:"white"}}>Signup</Link>
             </>
-          )}
+          )} */}
         </div>
       </div>
     </nav>
