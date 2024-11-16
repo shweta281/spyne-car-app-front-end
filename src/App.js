@@ -18,11 +18,11 @@ console.log(data);
     <Router>
       <Header islogin={setLogin}/>
       <Routes>
-        {login ? <Route path="/" element={<CarList />} /> : <Route path="/" element={<Login />} />}
+        <Route path="/" element={<CarList />} /> : <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login islogin={setLogin}/>} />
         <Route path="/signup" element={<Signup islogin={setLogin}/>} />
         <Route path="/CarList" element={<CarList islogin={setLogin}/>} />
-        {login? <Route path="/add-car" element={<CarForm islogin={setLogin}/>} /> : <Route path="/add-car" element={<Login islogin={setLogin}/>} />}
+        <Route path="/add-car" element={<CarForm islogin={setLogin}/>} />
         <Route path="/add-car" element={<CarForm islogin={setLogin}/>} />
         <Route path="/car/:id" element={<CarDetail islogin={setLogin}/>} />
         <Route path="/car/edit/:id" element={<CarForm islogin={setLogin}/>} />
