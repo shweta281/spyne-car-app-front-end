@@ -1,62 +1,41 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'; // Import the CSS file
-import axiosInstance from '../api/axios';
-// import { useLocation } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
   const navigate = useNavigate();
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        // const response = await axiosInstance.get('/cars/list');
-        const { data } = await axiosInstance.post('/users/login');
-      } catch (error) {
-        console.error('Please Log in', error);
-      }
-    };
+  const data = localStorage.getItem('token');
 
-    fetchUser();
-  }, []);
-  
-
-  
-  
-  // const location = useLocation();
   const handleLogout = () => {
     localStorage.removeItem('token');
-    props.setloginfalse;
     navigate('/login');
   };
 
   return (
-    <nav className="header">
+    <nav className="header" >
       <div className="header-container">
         <div className="logo">
-          <Link to="/login" style={{color:"white"}}>MyCarApp</Link>
+          {data ? <Link to="/CarList">MyCarApp</Link> : <Link to="/login">MyCarApp</Link>}
+          
         </div>
         <div className="nav-links">
-          {props.login ? <Link to="/CarList" style={{color:"white"}}>Home</Link> : <Link to="/login" style={{color:"white"}}>Home</Link>}
-          <Link to="/add-car" style={{color:"white"}}>Add Car</Link>
-          <Link to="/CarList" style={{color:"white"}}>My Cars</Link>
-              <button className="logout-btn" onClick={handleLogout}>
-                Logout
-              </button> 
-              <Link to="/login" style={{color:"white"}}>Login</Link>
-              <Link to="/signup" style={{color:"white"}}>Signup</Link>
-          {/* {data ? (
+          {data ? <Link to="/CarList">Home</Link> : <Link to="/login">Home</Link>}
+          {/* <Link to="/">Home</Link> */}
+          {data ? <Link to="/add-car">Add Car</Link> : <Link to="/login">Add Car</Link>}
+          {/* <Link to="/add-car">Add Car</Link> */}
+          {data ? (
             <>
-              <Link to="/CarList" style={{color:"white"}}>My Cars</Link>
+              <Link to="/CarList">My Cars</Link>
               <button className="logout-btn" onClick={handleLogout}>
                 Logout
-              </button> 
+              </button>
             </>
           ) : (
             <>
-              <Link to="/login" style={{color:"white"}}>Login</Link>
-              <Link to="/signup" style={{color:"white"}}>Signup</Link>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
             </>
-          )} */}
+          )}
         </div>
       </div>
     </nav>
