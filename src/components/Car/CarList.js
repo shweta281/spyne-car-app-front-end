@@ -10,7 +10,7 @@ const CarList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { username } = location.state || {}; // Username passed from the previous screen
-
+ 
   useEffect(() => {
     const fetchCars = async () => {
       try {

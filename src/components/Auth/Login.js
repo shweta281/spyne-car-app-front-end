@@ -5,7 +5,7 @@ import API from '../../api';
 import { Link} from 'react-router-dom';
 import './Login.css'; // Import the CSS file
 
-const Login = () => {
+const Login = (props) => {
   const [form, setForm] = useState({ username: '', password: '' });
   const navigate = useNavigate();
   // console.log("hello");
@@ -16,7 +16,8 @@ const Login = () => {
 
       const { data } = await API.post('/users/login', form);
       localStorage.setItem('token', data.token);
-      console.log(form.username, 'IIIIIIII');
+      // console.log(form.username, 'IIIIIIII');
+      props.islogin = true;
       // <CarList username = {form.username}/>
       // console.log(data.token.password);
       navigate('/CarList', { state: { username: form?.username } });
