@@ -7,17 +7,19 @@ import './Login.css'; // Import the CSS file
 
 const Login = (props) => {
   const [form, setForm] = useState({ username: '', password: '' });
+  const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
   // console.log("hello");
   
   const handleSubmit = async (e) => {
+    setLoader(true);
     e.preventDefault();
     try {
 
       const { data } = await API.post('/users/login', form);
       localStorage.setItem('token', data.token);
       // console.log(form.username, 'IIIIIIII');
-      props.setlogintrue;
+      // props.setlogintrue;
       console.log(props.login);
       // <CarList username = {form.username}/>
       // console.log(data.token.password);
@@ -25,6 +27,7 @@ const Login = (props) => {
     } catch (error) {
       alert('Invalid credentials');
     }
+    setLoader(false);
   };
 
   return (
@@ -46,8 +49,9 @@ const Login = (props) => {
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
-        <button className="login-button" type="submit">
-          Login
+        <button className="login-button" disabled={loader} type="submit">
+          
+          {loader ? 'Please wait !!!' : 'Login'}
         </button>
         <p style={{paddingTop: "10px"}}>Don't have an account? <Link to="/signup">Signup</Link></p>
       </form>
