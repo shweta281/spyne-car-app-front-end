@@ -6,6 +6,9 @@ import './Header.css'; // Import the CSS file
 const Header = (props) => {
   const navigate = useNavigate();
   const data = localStorage.getItem('token');
+
+  console.log(props.islogin);
+  
   // const location = useLocation();
   const handleLogout = () => {
     localStorage.removeItem('token');
