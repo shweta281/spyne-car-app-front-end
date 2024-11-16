@@ -6,16 +6,19 @@ import './Signup.css'; // Import the CSS file
 
 const Signup = () => {
   const [form, setForm] = useState({ username: '', password: '' });
+  const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader(true);
     try {
       await API.post('/users/signup', form);
       navigate('/login');
     } catch (error) {
       alert('Signup failed');
     }
+    setLoader(false);
   };
 
   return (
@@ -36,8 +39,8 @@ const Signup = () => {
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
-        <button className="signup-button" type="submit">
-          Signup
+        <button className="signup-button" disabled={loader} type="submit">
+          {loader ? 'Please wait !!!' : 'Login'}
         </button>
         <p style={{paddingTop: "10px"}}>Already have an account? <Link to="/login">Log in</Link></p>
       </form>
