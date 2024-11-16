@@ -24,7 +24,6 @@ const Header = (props) => {
           
         </div>
         <div className="nav-links">
-          {props.islogin ? <Link to="/CarList">Home</Link> : <Link to="/login" style={{color: 'black'}}>Home</Link>}
           {/* <Link to="/">Home</Link> */}
           <Link to="/add-car">Add Car</Link>
           {/* <Link to="/add-car">Add Car</Link> */}
