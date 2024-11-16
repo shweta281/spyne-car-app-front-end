@@ -1,0 +1,96 @@
+.car-edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+  }
+  
+  .car-edit-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .car-edit-form h1 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .car-edit-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .car-edit-form input,
+  .car-edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .car-edit-form input:focus,
+  .car-edit-form textarea:focus {
+    border-color: #3498db;
+  }
+  
+  .car-edit-form textarea {
+    resize: vertical;
+  }
+  
+  .car-edit-form .image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .car-edit-form .image-preview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .car-edit-form button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .car-edit-form button[type="submit"] {
+    background-color: #28a745;
+    margin-right: 10px;
+  }
+  
+  .car-edit-form button[type="submit"]:hover {
+    background-color: #218838;
+  }
+  
+  .car-edit-form button[type="button"] {
+    background-color: #dc3545;
+  }
+  
+  .car-edit-form button[type="button"]:hover {
+    background-color: #c82333;
+  }
+  

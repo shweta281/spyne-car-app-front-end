@@ -1,0 +1,95 @@
+/* General styles for the form */
+.car-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+.car-form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input styles */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #007bff;
+}
+
+/* Image upload info */
+.image-info {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Button styles */
+.form-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Error message */
+.error {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .car-form {
+    width: 90%;
+  }
+}
