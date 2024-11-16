@@ -8,13 +8,15 @@ import './Login.css'; // Import the CSS file
 const Login = () => {
   const [form, setForm] = useState({ username: '', password: '' });
   const navigate = useNavigate();
-
+  // console.log("hello");
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
       const { data } = await API.post('/users/login', form);
       localStorage.setItem('token', data.token);
-      // console.log(form.username, 'IIIIIIII');
+      console.log(form.username, 'IIIIIIII');
       // <CarList username = {form.username}/>
       // console.log(data.token.password);
       navigate('/CarList', { state: { username: form?.username } });
