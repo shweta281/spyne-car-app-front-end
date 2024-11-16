@@ -14,7 +14,7 @@ function App() {
   const data = localStorage.getItem('token');
   return (
     <Router>
-      <Header />
+      <Header login = {login} setlogin = {setLogin}/>
       <Routes>
         {data ? <Route path="/" element={<CarList />} /> : <Route path="/" element={<Login />} />}
         <Route path="/login" element={<Login login = {login} setlogin = {setLogin}/>} />

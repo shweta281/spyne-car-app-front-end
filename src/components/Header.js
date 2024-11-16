@@ -12,7 +12,7 @@ const Header = (props) => {
   // const location = useLocation();
   const handleLogout = () => {
     localStorage.removeItem('token');
-    props.setlogin(true);
+    props.setlogin(false);
     navigate('/login');
   };
 
