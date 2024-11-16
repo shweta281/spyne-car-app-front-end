@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
+const API = axios.create({
   baseURL: 'https://spyne-car-app-backend-1.onrender.com', 
 });
 
@@ -12,5 +12,5 @@ API.interceptors.request.use((req) => {
   }
   return req;
 });
- 
+
 export default API;
