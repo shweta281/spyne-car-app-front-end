@@ -10,8 +10,10 @@ const CarList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { username } = location.state || {}; // Username passed from the previous screen
+  const [loader, setLoader] = useState(false);
  
   useEffect(() => {
+    setLoader(true);
     const fetchCars = async () => {
       try {
         const response = await axiosInstance.get('/cars/list');
@@ -22,6 +24,7 @@ const CarList = () => {
     };
 
     fetchCars();
+    setLoader(true);
   }, []);
 
   const handleDelete = async (carId) => {
