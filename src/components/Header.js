@@ -22,7 +22,7 @@ const Header = () => {
           {data ? <Link to="/CarList">Home</Link> : <Link to="/login">Home</Link>}
           {/* <Link to="/">Home</Link> */}
           {data ? <Link to="/add-car">Add Car</Link> : <Link to="/login">Add Car</Link>}
-          <>
+          {/* <>
               <Link to="/CarList">My Cars</Link>
               
             </>
@@ -32,9 +32,9 @@ const Header = () => {
             </>
             <button className="logout-btn" onClick={handleLogout}>
                 Logout
-              </button>
+              </button> */}
           {/* <Link to="/add-car">Add Car</Link> */}
-          {/* {data ? (
+          {data ? (
             <>
               <Link to="/CarList">My Cars</Link>
               <button className="logout-btn" onClick={handleLogout}>
@@ -46,7 +46,7 @@ const Header = () => {
               <Link to="/login">Login</Link>
               <Link to="/signup">Signup</Link>
             </>
-          )} */}
+          )}
         </div>
       </div>
     </nav>
