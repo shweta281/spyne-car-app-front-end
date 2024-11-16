@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // Create an Axios instance
 const axiosInstance = axios.create({
-  baseURL: 'https://spyne-car-app-backend-1.onrender.com', 
+  baseURL: 'https://spyne-car-app-backend-1.onrender.com/api', 
+  // baseURL: 'http://localhost:5000/api', 
 });
 // const axiosInstance = axios.create({
 //   baseURL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api', 

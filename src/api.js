@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://spyne-car-app-backend-1.onrender.com', 
+  baseURL: 'https://spyne-car-app-backend-1.onrender.com/api', 
 });
 
 // Add JWT to headers
